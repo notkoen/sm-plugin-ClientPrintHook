@@ -48,9 +48,6 @@ public MRESReturn Detour_ClientPrint(Handle hParams) {
 
     // Get display method
     char sBuffer[512];
-    // int iDestination = DHookGetParam(hParams, 2);
-    // DHookGetParamString(hParams, 2, sBuffer, sizeof(sBuffer));
-    // PrintToConsoleAll("EHudNotify destination = %s", sBuffer);
     int iDestination = DHookGetParam(hParams, 2);
     PrintToConsoleAll("EHudNotify destination = %i", iDestination);
 
