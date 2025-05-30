@@ -40,20 +40,20 @@ public MRESReturn Detour_ClientPrint(Handle hParams) {
     // From https://developer.valvesoftware.com/wiki/Team_Fortress_2/Scripting/Script_Functions
     // void ClientPrint(CBasePlayer player, EHudNotify destination, string message)
     // CBasePlayer player and EHudNotify are int
-    PrintToConsoleAll("-------------------------[ Detour_ClientPrint ]-------------------------");
+    PrintToChatAll("-------------------------[ Detour_ClientPrint ]-------------------------");
 
     // Get player num
     int iPlayer = DHookGetParam(hParams, 1);
-    PrintToConsoleAll("CBasePlayer player = %i", iPlayer);
+    PrintToChatAll("CBasePlayer player = %i", iPlayer);
 
     // Get display method
     char sBuffer[512];
     int iDestination = DHookGetParam(hParams, 2);
-    PrintToConsoleAll("EHudNotify destination = %i", iDestination);
+    PrintToChatAll("EHudNotify destination = %i", iDestination);
 
     // Get string
     DHookGetParamString(hParams, 3, sBuffer, sizeof(sBuffer));
-    PrintToConsoleAll("string message: %s", sBuffer);
-    PrintToConsoleAll("-------------------------------------------------------------------------");
+    PrintToChatAll("string message: %s", sBuffer);
+    PrintToChatAll("-------------------------------------------------------------------------");
     return MRES_Supercede;
 }
