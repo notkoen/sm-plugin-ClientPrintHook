@@ -52,8 +52,10 @@ public MRESReturn Detour_ClientPrint(Handle hParams) {
     PrintToChatAll("EHudNotify destination = %i", iDestination);
 
     // Get string
+    // We add "\x01" in front so hex codes/chat messages are rendered properly
+    // Why? I don't know. Source engine spaghetti :shrug:
     DHookGetParamString(hParams, 3, sBuffer, sizeof(sBuffer));
-    PrintToChatAll("string message: %s", sBuffer);
+    PrintToChatAll("\x01string message: %s", sBuffer);
     PrintToChatAll("-------------------------------------------------------------------------");
     return MRES_Supercede;
 }
