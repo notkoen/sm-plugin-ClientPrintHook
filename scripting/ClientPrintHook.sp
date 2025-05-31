@@ -47,13 +47,13 @@ public MRESReturn Detour_ClientPrint(Handle hParams) {
     PrintToChatAll("CBasePlayer player = %i", iPlayer);
 
     // Get display method
-    char sBuffer[512];
     int iDestination = DHookGetParam(hParams, 2);
     PrintToChatAll("EHudNotify destination = %i", iDestination);
 
     // Get string
     // We add "\x01" in front so hex codes/chat messages are rendered properly
     // Why? I don't know. Source engine spaghetti :shrug:
+    char sBuffer[512];
     DHookGetParamString(hParams, 3, sBuffer, sizeof(sBuffer));
     PrintToChatAll("\x01string message: %s", sBuffer);
     PrintToChatAll("-------------------------------------------------------------------------");
